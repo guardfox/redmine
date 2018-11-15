@@ -13,4 +13,4 @@ chmod -R 1777 /opt/bitnami/redmine/tmp
 
 info "Starting redmine..."
 cd /opt/bitnami/redmine
-exec gosu ${USER} bundle exec passenger start -e ${RAILS_ENV} --pid-file ${PID_FILE} --log-file ${LOG_FILE} -p 3000
+exec gosu ${USER} bundle exec passenger start -e ${RAILS_ENV} --pid-file ${PID_FILE} --log-file ${LOG_FILE} -p 4000

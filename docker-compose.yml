@@ -9,7 +9,7 @@ services:
   redmine:
     image: 'bitnami/redmine:latest'
     ports:
-      - '80:3000'
+      - '80:4000'
     volumes:
       - 'redmine_data:/bitnami'
     depends_on:

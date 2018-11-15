@@ -73,7 +73,7 @@ services:
   redmine:
     image: 'bitnami/redmine:latest'
     ports:
-      - '80:3000'
+      - '80:4000'
     volumes:
       - 'redmine_data:/bitnami'
     depends_on:
@@ -108,7 +108,7 @@ If you want to run the application manually instead of using docker-compose, the
 3. Run the Redmine container:
 
   ```bash
-  $ docker run -d --name redmine --net=redmine_network -p 80:3000 \
+  $ docker run -d --name redmine --net=redmine_network -p 80:4000 \
       bitnami/redmine
   ```
 
@@ -135,7 +135,7 @@ services:
   redmine:
     image: 'bitnami/redmine:latest'
     ports:
-      - '80:3000'
+      - '80:4000'
     environment:
       - REDMINE_DB_POSTGRES=postgresql
     volumes:
@@ -175,7 +175,7 @@ version: '2'
   redmine:
     image: bitnami/redmine:latest
     ports:
-      - 80:3000
+      - 80:4000
     volumes:
       - '/path/to/redmine-persistence:/bitnami'
 ```
@@ -202,7 +202,7 @@ version: '2'
 3. Run the Redmine container:
 
   ```bash
-  $ docker run -d --name redmine -p 80:3000 --net redmine-tier \
+  $ docker run -d --name redmine -p 80:4000 --net redmine-tier \
     --volume /path/to/redmine-persistence:/bitnami \
     bitnami/redmine:latest
   ```
@@ -254,7 +254,7 @@ When you start the redmine image, you can adjust the configuration of the instan
 redmine:
   image: bitnami/redmine:latest
   ports:
-    - 80:3000
+    - 80:4000
   environment:
     - REDMINE_PASSWORD=my_password
   volumes:
@@ -266,7 +266,7 @@ redmine:
  * For manual execution add a `-e` option with each variable and value:
 
 ```bash
- $ docker run -d --name redmine --network=redmine_network -p 80:3000 \
+ $ docker run -d --name redmine --network=redmine_network -p 80:4000 \
      -e REDMINE_PASSWORD=my_password \
      -v /your/local/path/bitnami/redmine:/bitnami \
      bitnami/redmine
@@ -300,7 +300,7 @@ This would be an example of SMTP configuration using a GMail account:
   redmine:
     image: bitnami/redmine:latest
     ports:
-      - 80:3000
+      - 80:4000
     environment:
       - SMTP_HOST=smtp.gmail.com
       - SMTP_PORT=587
@@ -311,7 +311,7 @@ This would be an example of SMTP configuration using a GMail account:
  * For manual execution:
 
 ```bash
- $ docker run -d -p 80:3000 --name redmine --network=redmine_network \
+ $ docker run -d -p 80:4000 --name redmine --network=redmine_network \
     -e SMTP_HOST=smtp.gmail.com \
     -e SMTP_PORT=587 \
     -e SMTP_USER=your_email@gmail.com \
